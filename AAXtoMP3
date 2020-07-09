@@ -350,6 +350,7 @@ do
   save_metadata "${aax_file}"
   genre=$(get_metadata_value genre)
   artist=$(get_metadata_value artist)
+  artist=${artist%.}
   title=$(get_metadata_value title | $SED 's/'\:'/'-'/g' | $SED 's/- /-/g' | xargs -0)
   title=${title:0:100}
   if [ "x${targetdir}" != "x" ] ; then
